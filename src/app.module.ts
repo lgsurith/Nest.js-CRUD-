@@ -1,4 +1,4 @@
-import { Inject, Module } from '@nestjs/common';
+iiimport { Inject, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -21,7 +21,7 @@ import { WalletsModule } from './wallets/wallets.module';
         password : configService.get('DB_PASSWORD'),
         database : configService.get('DB_NAME'),
         entities : [join(process.cwd() , 'dist/**/*.entity.js')],
-        synchronize : true
+        synchronize : true //synchronisation during production must be avoided 
       }),
     }),
     UsersModule,
